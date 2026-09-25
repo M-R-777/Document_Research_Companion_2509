@@ -325,13 +325,12 @@ def render_sidebar():
 # ==================================================
 def render_chat_history():
     for idx, message in enumerate(st.session_state.messages):
-        # Use formal emojis to prevent FileNotFoundError on text strings
         avatar = "👤" if message["role"] == "user" else "🤖"
         
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
             
-            # Display follow-up button if it's the last message and contains a follow-up
+            #follow-up button
             is_last_message = (idx == len(st.session_state.messages) - 1)
             if is_last_message and message.get("follow_up"):
                 st.markdown("<br>", unsafe_allow_html=True)
@@ -385,7 +384,6 @@ def get_groq_response(prompt, groq_api_key, response_placeholder):
                 full_response += text_chunk
                 first_chunk_received = True
                 
-                # Strip the followup tag for real-time display so the user doesn't see XML
                 display_text = re.sub(r'<followup>.*?(</followup>)?', '', full_response, flags=re.IGNORECASE | re.DOTALL)
                 response_placeholder.markdown(display_text + "▌")
 
