@@ -1,0 +1,9 @@
+# 1. API Keys (Secrets)
+.env
+
+# 2. Local database & uploaded files
+chroma_db/
+temp_uploads/
+
+# 3. Virtual environment
+venv/
