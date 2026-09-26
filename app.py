@@ -18,7 +18,7 @@ from langchain_chroma import Chroma
 # CONFIG
 # ==================================================
 PAGE_TITLE = "Document Research Assistant"
-PAGE_ICON = "๋࣭ ⭑✮💻₊ ⊹"
+PAGE_ICON = "🌐"
 TEMP_UPLOAD_DIR = "./temp_uploads"
 CHROMA_DIR = "./chroma_db"
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
